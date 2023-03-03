@@ -1,0 +1,140 @@
+/* Header
+------------------------------------------------------------*/
+
+.c-header {
+  &__container {
+    width: calc(100% - 30px);
+
+    position: fixed;
+    z-index: 999;
+    top: 25px;
+    left: 15px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 325px auto 325px;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+
+    border: 5px solid $black-cl;
+    border-bottom: 3px solid $black-cl;
+  }
+
+  &__left,
+  &__right,
+  &__center {
+    height: 100%;
+  }
+
+  &__left {
+    padding: 20px;
+    border-right: 3px solid $black-cl;
+  }
+
+  &__center,
+  &__right {
+    border-left: 3px solid $black-cl;
+  }
+
+  &__right {
+    background-image: url(../../assets/img/countdown.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__info {
+    font-weight: 700;
+    margin-top: -15px;
+
+    h1 {
+      font-size: 1.4rem;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 1.7rem;
+      color: #d50a0a;
+
+      span {
+        font-size: 1.45rem;
+        color: #064f89;
+      }
+    }
+  }
+
+  &__countdown {
+    p {
+      font-size: 8rem;
+      font-weight: 900;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    span {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+  }
+
+  &__center {
+    margin-left: 5px;
+  }
+
+  &__nav {
+    .nav-link {
+      border-right: 1px solid $black-cl;
+      line-height: 1;
+
+      width: 100%;
+      height: 100%;
+
+      font-family: $toppan-fonts;
+      font-size: 1.6rem;
+
+      @include mid(true);
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    &.nav-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 50%;
+      border-bottom: 1px solid $black-cl;
+
+      .nav-link:first-child {
+        background-image: url(../../assets/img/grid.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+
+      .nav-link:first-child::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        right: 25px;
+        background-image: url(../../assets/img/cursor.webp);
+        background-repeat: no-repeat;
+        background-size: 17.5px 21px;
+        width: 17.5px;
+        height: 21px;
+      }
+    }
+
+    &.nav-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      height: 50%;
+    }
+  }
+}

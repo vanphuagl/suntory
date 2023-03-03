@@ -1,0 +1,109 @@
+/* layout
+------------------------------------------------------------*/
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $white-cl;
+  font-family: $main-fonts;
+  color: $main-text-cl;
+  font-weight: 400;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: none;
+
+  background-image: url(../../assets/img/bg.webp);
+  background-repeat: repeat;
+}
+
+//-------------------------------------------------------
+main {
+  flex: 1;
+}
+
+.l-container {
+  width: $base-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.l-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  position: relative;
+  border: 5px solid $black-cl;
+  margin: 0 15px 10px;
+}
+
+.l-sidebar__container {
+  position: fixed;
+  top: 145px;
+  right: 20px;
+
+  width: calc(325px - 3px);
+  height: calc(100vh - 145px - 10px); // top - marginBottom
+}
+
+.l-wrapper {
+  width: calc(100% - 325px + 3px); // width + border
+}
+
+.sp-only {
+  display: none !important;
+}
+@include maxW(767px) {
+  .pc-only {
+    display: none !important;
+  }
+
+  .sp-only {
+    display: block !important;
+  }
+}
+//-------------------------------------------------------
+
+.bodyBackground {
+  position: fixed;
+  z-index: 12;
+  background-image: url(../../assets/img/bg.webp);
+  background-repeat: repeat;
+
+  &.top,
+  &.bottom {
+    left: 0;
+    width: 100%;
+    height: 25px;
+  }
+
+  &.right,
+  &.left {
+    top: 0;
+    width: 15px;
+    height: 100%;
+  }
+
+  &.top {
+    top: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+    height: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+}

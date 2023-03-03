@@ -1,0 +1,27 @@
+/* Footer
+------------------------------------------------------------*/
+
+.c-footer {
+  &__wrapper {
+    border-top: 3px solid $black-cl;
+    border-right: 3px solid $black-cl;
+
+    font-family: "Helvetica", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  &__backtotop {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
