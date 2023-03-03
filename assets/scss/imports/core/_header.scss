@@ -3,6 +3,8 @@
 
 .c-header {
   &__container {
+    background-image: url(../../assets/img/bg.webp);
+    background-repeat: repeat;
     width: calc(100% - 30px);
 
     position: fixed;
