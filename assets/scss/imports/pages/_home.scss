@@ -2,7 +2,8 @@
 /*                                  home page                                 */
 /* -------------------------------------------------------------------------- */
 
-.p-home {}
+.p-home {
+}
 
 // @mainvisual
 .p-mainvisual {
@@ -42,7 +43,7 @@
 
       width: 55px;
       height: 55px;
-      background-color: #DADADA;
+      background-color: #dadada;
       border: 1px solid $black-cl;
 
       &::after {
@@ -60,7 +61,7 @@
     border-left: 1px solid $black-cl;
     text-align: center;
     font-weight: 700;
-    background-color: #AED5DA;
+    background-color: #aed5da;
 
     @include mid(true);
     flex-direction: column;
@@ -109,8 +110,8 @@
   }
 }
 
-// @background
-.c-background {
+// @banner
+.c-banner {
   padding: 8px;
   border-bottom: 3px solid $black-cl;
 
@@ -122,8 +123,7 @@
 }
 
 // @news
-.c-news {
-
+.c-post {
   &__new {
     width: 54px;
     height: 54px;
@@ -158,5 +158,46 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid $black-cl;
+  }
+
+  &__items {
+    border-right: 1px solid $black-cl;
+    border-bottom: 1px solid $black-cl;
+    margin-bottom: -1px;
+  }
+
+  &__more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    width: 50%;
+
+    &:first-child {
+      border-right: 1px solid $black-cl;
+    }
+
+    padding: 8px;
+
+    a {
+      background-color: $black-cl;
+      color: $white-cl;
+      height: 60px;
+
+      @include mid(true);
+      gap: 20px;
+
+      svg {
+        margin-top: 5px;
+      }
+      
+      p {
+        font-size: 1.7rem;
+        font-weight: 700;
+      }
+    }
   }
 }
