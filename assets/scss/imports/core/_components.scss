@@ -1,2 +1,110 @@
 /* components
 ------------------------------------------------------------*/
+
+/* --------------------------------- sidebar -------------------------------- */
+.l-sidebar {
+    &__container {
+        position: fixed;
+        top: 145px;
+        right: 20px;
+
+        width: calc(325px - 3px);
+        height: calc(100vh - 145px); // top
+
+        padding: 8px;
+    }
+
+    &__wrapper {
+        height: 100%;
+        border: 1px solid $black-cl;
+        padding: 15px;
+    }
+
+    &__date {
+        background-image: url(../../assets/img/grid.webp);
+        background-repeat: repeat;
+        font-family: $toppan-fonts;
+        font-weight: 700;
+        text-align: center;
+        padding: 13px;
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__hotwords {
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        h2 {
+            font-family: $helvetica-fonts;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.7rem;
+            text-align: center;
+
+            padding-bottom: 25px;
+        }
+    }
+
+    &__tags {
+        @include mid(true);
+        flex-wrap: wrap;
+        gap: 10px;
+
+        font-size: 1.4rem;
+        font-weight: 700;
+        height: 160px;
+        overflow: hidden;
+
+        a {
+            background-color: #D5D5D5;
+            padding: 5px;
+        }
+    }
+
+    &__figure {
+        @include mid(true);
+        gap: 15px;
+
+        padding: 25px 0;
+        border-top: 1px solid rgba($color: #000000, $alpha: 0.15);
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.15);
+    }
+
+    &__mail {
+        padding-top: 30px;
+        text-align: center;
+        font-family: $toppan-fonts;
+
+        h2 {
+            font-size: 2rem;
+            line-height: 2.13;
+
+            svg {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+/* ---------------------------------- unility --------------------------------- */
+
+.minna {
+    background-color: #AED5DA;
+}
+
+.is-hidden {
+    display: none !important;
+}
