@@ -1,5 +1,45 @@
 import mockPost from "../data/mockPost.js";
 
+/* ----------------------------- countdown days ----------------------------- */
+const deadline = new Date("Apr 13, 2025 24:00:00").getTime();
+let getDate = new Date().getTime("ja-JP", {
+  timeZone: "Asia/Tokyo",
+});
+
+const countDownFunc = setInterval(function () {
+  let t = deadline - getDate;
+  let days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+  document.getElementById("countdown-days").innerHTML = days;
+
+  if (t < 0) {
+    clearInterval(countDownx);
+    document.getElementById("countdown-days").innerHTML = "EXPIRED";
+  }
+}, 0);
+
+const todayFunc = function () {
+  let event = new Date();
+
+  const options = {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+  };
+  const optionsYear = {
+    year: "numeric",
+  };
+
+  document.getElementById("current-date").innerHTML = event.toLocaleDateString(
+    "ja-JP",
+    options
+  );
+  document.getElementById("current-year").innerHTML =
+    event.toLocaleDateString("ja-JP", optionsYear) + "(令和5年)";
+};
+
+todayFunc();
+
 /* --------------------------------- swiper --------------------------------- */
 const swiperMainvisual = new Swiper(".p-mainvisual__swiper", {
   navigation: {
@@ -14,7 +54,7 @@ const swiperMainvisual = new Swiper(".p-mainvisual__swiper", {
   },
   fadeEffect: { crossFade: false },
   virtualTranslate: true,
-  effect: 'fade',
+  effect: "fade",
 });
 
 const swiperMovie = new Swiper(".p-movie__swiper", {
@@ -29,7 +69,7 @@ const swiperMovie = new Swiper(".p-movie__swiper", {
   },
   fadeEffect: { crossFade: false },
   virtualTranslate: true,
-  effect: 'fade',
+  effect: "fade",
 });
 
 /* ------------------------------ scroll to top ----------------------------- */
