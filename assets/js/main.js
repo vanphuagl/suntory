@@ -1,11 +1,22 @@
 /* --------------------------------- swiper --------------------------------- */
-const swiper = new Swiper(".p-mainvisual__swiper", {
+const swiperMainvisual = new Swiper(".p-mainvisual__swiper", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   speed: 600,
   allowTouchMove: false,
+});
+
+const swiperMovie = new Swiper(".p-movie__swiper", {
+  speed: 600,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2000,
+  },
 });
 
 /* ------------------------------ scroll to top ----------------------------- */
