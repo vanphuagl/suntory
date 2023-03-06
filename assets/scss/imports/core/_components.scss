@@ -76,6 +76,22 @@
         padding: 25px 0;
         border-top: 1px solid rgba($color: #000000, $alpha: 0.15);
         border-bottom: 1px solid rgba($color: #000000, $alpha: 0.15);
+
+        a {
+            text-align: center;
+
+            p {
+                padding-top: 10px;
+                font-family: $toppan-fonts;
+                font-size: 1.4rem;
+            }
+            
+            img {
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+            }
+        }
     }
 
     &__mail {
@@ -102,7 +118,19 @@
 /* ---------------------------------- unility --------------------------------- */
 
 .minna {
-    background-color: #AED5DA;
+    background-color: #AED5DA !important;
+}
+
+.nakama {
+    background-color: #DEB3B3 !important;
+}
+
+.sdgs {
+    background-color: #DCD498 !important;
+}
+
+.event {
+    background-color: #C8DEB0 !important;
 }
 
 .is-hidden {
