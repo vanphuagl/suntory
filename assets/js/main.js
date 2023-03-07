@@ -41,36 +41,57 @@ const todayFunc = function () {
 todayFunc();
 
 /* --------------------------------- swiper --------------------------------- */
-const swiperMainvisual = new Swiper(".p-mainvisual__swiper", {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  speed: 1000,
-  allowTouchMove: false,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: true,
-  },
-  fadeEffect: { crossFade: false },
-  virtualTranslate: true,
-  effect: "fade",
-});
+const mainvisualSwiper = document.querySelector(".p-mainvisual__swiper"),
+  movieSwiper = document.querySelector(".p-movie__swiper"),
+  detailSwiper = document.querySelector(".p-detail__swiper");
 
-const swiperMovie = new Swiper(".p-movie__swiper", {
-  speed: 1000,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: true,
-  },
-  fadeEffect: { crossFade: false },
-  virtualTranslate: true,
-  effect: "fade",
-});
+if (mainvisualSwiper) {
+  const swiperMainvisual = new Swiper(mainvisualSwiper, {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    speed: 1000,
+    allowTouchMove: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    },
+    fadeEffect: { crossFade: false },
+    virtualTranslate: true,
+    effect: "fade",
+  });
+}
+
+if (movieSwiper) {
+  const swiperMovie = new Swiper(movieSwiper, {
+    speed: 1000,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    },
+    fadeEffect: { crossFade: false },
+    virtualTranslate: true,
+    effect: "fade",
+  });
+}
+
+if (detailSwiper) {
+  const swiperDetail = new Swiper(detailSwiper, {
+    speed: 1000,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    fadeEffect: { crossFade: false },
+    virtualTranslate: true,
+    effect: "fade",
+  });
+}
 
 /* ------------------------------ scroll to top ----------------------------- */
 const scrollTop = document.querySelector(".c-footer__backtotop");
@@ -111,12 +132,11 @@ const articleList = document.querySelector("#article-list");
 let maxItem = 12;
 
 const renderArticle = (data, max) => {
-  console.log("data", data.slice(0, max));
+  if (articleList) {
+    data.slice(0, max).forEach((item) => {
+      // console.log("item", item);
 
-  data.slice(0, max).forEach((item) => {
-    // console.log("item", item);
-
-    let article = `
+      let article = `
         <div class="c-article__items">
           <a href="./listCategory.html" class="c-article__category ${
             item.typeCategory
@@ -150,16 +170,17 @@ const renderArticle = (data, max) => {
           </a>
 
           <div class="c-article__tags">
-            <a href="#">＃大阪グルメ</a>
-            <a href="#">#ミャクミャク</a>
-            <a href="#">＃万博会場探訪</a>
-            <a href="#">＃SDGs</a>
-            <a href="#">＃お得に万博</a>             
+            <a href="./listHashtag.html">＃大阪グルメ</a>
+            <a href="./listHashtag.html">#ミャクミャク</a>
+            <a href="./listHashtag.html">＃万博会場探訪</a>
+            <a href="./listHashtag.html">＃SDGs</a>
+            <a href="./listHashtag.html">＃お得に万博</a>             
           </div>
         </div>
       `;
-    articleList.insertAdjacentHTML("beforeend", article);
-  });
+      articleList.insertAdjacentHTML("beforeend", article);
+    });
+  }
 };
 
 renderArticle(mockPost, maxItem);

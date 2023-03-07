@@ -137,6 +137,14 @@
   display: none !important;
 }
 
+.border-top {
+  border-top: 3px solid $black-cl;
+}
+
+.border-bottom {
+  border-bottom: 3px solid $black-cl;
+}
+
 /* -------------------------------- animation ------------------------------- */
 .anim-box {
   &.poyopoyo {
@@ -179,11 +187,51 @@
   border-top: 3px solid #797979;
   border-bottom: 3px solid #797979;
   border-right: 3px solid #797979;
-  animation: spin 1s linear infinite;   
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
+/* ------------------------------- breadcrumb ------------------------------- */
+.c-breadcrumb {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 3px solid $black-cl;
+    background-color: #d5d5d5;
+
+    a {
+      font-size: 1.8rem;
+
+      svg {
+        width: 20px;
+        height: 14px;
+      }
+    }
+
+    h2 {
+      font-size: 2.3rem;
+
+      span {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &__title,
+  &__wrapper a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+}

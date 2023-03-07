@@ -546,7 +546,7 @@ const mockPost = [
     ],
   },
   {
-    category: "LAST",
+    category: "なかま紹介",
     typeCategory: "nakama",
     new: false,
     thumbnail: "./assets/img/post-6.webp",

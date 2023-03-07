@@ -143,10 +143,6 @@
 
 // @news
 .c-article {
-  &__wrapper {
-    border-bottom: 3px solid $black-cl;
-  }
-
   &__box {
     font-weight: 700;
     flex: 1;
@@ -280,6 +276,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 3px solid $black-cl
   }
 
   &__btn {
@@ -313,34 +310,6 @@
 
 // @movies
 .p-movie {
-
-  &__wrapper {
-    border-bottom: 3px solid $black-cl
-  }
-
-  &__history {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    border-bottom: 3px solid $black-cl;
-
-    a {
-      font-size: 1.8rem;
-    }
-
-    h2 {
-      font-size: 2.3rem;
-    }
-  }
-
-  &__title,
-  &__history a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-  }
 
   &__content {
     padding: 8px;
