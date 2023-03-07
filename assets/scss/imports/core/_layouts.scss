@@ -25,7 +25,7 @@ body {
 //-------------------------------------------------------
 main {
   flex: 1;
-  padding-top: calc(145px - 5px); // - border
+  padding-top: calc(135px - 5px + 2px); // - border
   width: calc(100% - 325px); // - width
   border-right: 3px solid $black-cl;
 }

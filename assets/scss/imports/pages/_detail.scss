@@ -90,6 +90,7 @@
 
     .swiper-pagination {
       bottom: 5px;
+      z-index: 1;
     }
 
     .swiper-pagination-bullet {
@@ -198,7 +199,7 @@
     text-align: start;
     justify-content: flex-start;
   }
-  
+
   &__next {
     text-align: end;
     justify-content: flex-end;
