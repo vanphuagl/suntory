@@ -313,6 +313,11 @@
 
 // @movies
 .p-movie {
+
+  &__wrapper {
+    border-bottom: 3px solid $black-cl
+  }
+
   &__history {
     display: flex;
     align-items: center;

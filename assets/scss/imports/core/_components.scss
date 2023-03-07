@@ -157,3 +157,33 @@
     transform: scale(0.95);
   }
 }
+
+/* -------------------------------- loadmore -------------------------------- */
+.c-loadmore {
+  padding: 20px;
+  @include mid(true);
+
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+#loader {
+  width: 30px;
+  height: 30px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top: 3px solid #797979;
+  border-bottom: 3px solid #797979;
+  border-right: 3px solid #797979;
+  animation: spin 1s linear infinite;   
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

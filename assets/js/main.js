@@ -1,7 +1,7 @@
 import mockPost from "../data/mockPost.js";
 
 /* ----------------------------- countdown days ----------------------------- */
-const deadline = new Date("Apr 13, 2025 24:00:00").getTime();
+const deadline = new Date("Apr 13, 2025 00:00:00").getTime();
 let getDate = new Date().getTime("ja-JP", {
   timeZone: "Asia/Tokyo",
 });
@@ -81,20 +81,50 @@ scrollTop.addEventListener("click", function () {
   });
 });
 
-/* ----------------------------- render article ----------------------------- */
-const articleList = document.querySelector("#article-list");
+/* ----------------------------- infinite scroll ---------------------------- */
+const loading = document.querySelector(".c-loadmore");
+window.addEventListener("scroll", () => {
+  if (loading) {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (clientHeight + scrollTop >= scrollHeight) {
+      // show the loading animation
+      showLoading();
+    }
+  }
+});
 
-const renderArticle = (data) => {
-  data.forEach((item) => {
-    console.log("item", item);
+function showLoading() {
+  loading.classList.add("show");
+
+  // load more data
+  setTimeout(() => {
+    renderArticle(mockPost, 6);
+  }, 500);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                emulator data                               */
+/* -------------------------------------------------------------------------- */
+
+// render article
+const articleList = document.querySelector("#article-list");
+let maxItem = 12;
+
+const renderArticle = (data, max) => {
+  console.log("data", data.slice(0, max));
+
+  data.slice(0, max).forEach((item) => {
+    // console.log("item", item);
 
     let article = `
         <div class="c-article__items">
-          <a href="#" class="c-article__category ${item.typeCategory}">
+          <a href="./listCategory.html" class="c-article__category ${
+            item.typeCategory
+          }">
             ${item.category}
           </a>
 
-          <a href="#" class="c-article__box">
+          <a href="./detail.html" class="c-article__box">
               <div class="c-article__thumbnail">
                   <img src="${item.thumbnail}" alt="${item.title}">
                   
@@ -132,4 +162,4 @@ const renderArticle = (data) => {
   });
 };
 
-// renderArticle(mockPost);
+renderArticle(mockPost, maxItem);
