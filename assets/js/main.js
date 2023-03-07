@@ -132,6 +132,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const showLoading = function () {
+function showLoading() {
   loading.classList.add("show");
-};
+}
