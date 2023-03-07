@@ -1,9 +1,21 @@
+"use strict";
+
+/* ------------------------------ refresh page ------------------------------ */
+
+["pageshow", "load"].forEach(function (evt) {
+  window.addEventListener(evt, function () {
+    document.body.classList.remove("fadeout");
+  });
+});
+
 /* ----------------------------- countdown days ----------------------------- */
+
 const deadline = new Date("Apr 13, 2025 00:00:00").getTime();
 let getDate = new Date().getTime("ja-JP", {
   timeZone: "Asia/Tokyo",
 });
 
+//
 const countDownFunc = setInterval(function () {
   let t = deadline - getDate;
   let days = Math.floor(t / (1000 * 60 * 60 * 24));
@@ -16,6 +28,7 @@ const countDownFunc = setInterval(function () {
   }
 }, 0);
 
+//
 const todayFunc = function () {
   let event = new Date();
 
@@ -39,6 +52,7 @@ const todayFunc = function () {
 todayFunc();
 
 /* --------------------------------- swiper --------------------------------- */
+
 const mainvisualSwiper = document.querySelector(".p-mainvisual__swiper"),
   movieSwiper = document.querySelector(".p-movie__swiper"),
   detailSwiper = document.querySelector(".p-detail__swiper");
@@ -96,6 +110,7 @@ if (detailSwiper) {
 }
 
 /* ------------------------------ scroll to top ----------------------------- */
+
 const scrollTop = document.querySelector(".c-footer__backtotop");
 scrollTop.addEventListener("click", function () {
   window.scrollTo({
@@ -105,6 +120,7 @@ scrollTop.addEventListener("click", function () {
 });
 
 /* ----------------------------- infinite scroll ---------------------------- */
+
 const loading = document.querySelector(".c-loadmore");
 window.addEventListener("scroll", () => {
   if (loading) {
@@ -116,6 +132,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-function showLoading() {
+const showLoading = function () {
   loading.classList.add("show");
-}
+};
